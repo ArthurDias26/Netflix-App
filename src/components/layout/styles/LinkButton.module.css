@@ -1,0 +1,26 @@
+.LinkButton{
+    padding: 14px 22px;
+    background-color: #fff;
+    display: block;
+    width: max-content;
+    text-decoration: none;
+    color: black;
+    border-radius:4px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s;
+    margin-right: 15px;
+}
+
+.LinkButton:hover{
+    opacity: .7;
+}
+
+@media (max-width: 460px) {
+    .LinkButton{
+    padding: 8px 16px;
+    font-size: 16px;
+    margin-right: 12px;
+
+    }
+}
