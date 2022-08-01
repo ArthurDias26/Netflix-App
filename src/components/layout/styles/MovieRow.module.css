@@ -1,0 +1,100 @@
+.movieRow{
+    padding: 2em 0 0 2vw;
+    margin-bottom:20px;
+    position: relative;
+}
+
+.movieRow h2{
+    font-size: 1.4em;
+    margin-bottom: 30px;
+}
+
+
+.movieRow_listArea{
+    overflow-x:hidden;
+}
+
+.movieRow_listArea .movieRow_list{
+    transition: all ease .6s;
+}
+
+.movieRow_listArea .movieRow_list .movieRow_item{
+    display: inline-block;
+    max-width: 13vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.movieRow_listArea .movieRow_list .movieRow_item img{
+    transform: scale(0.90);
+    width: 100%;
+    transition: all ease 0.25s;
+    cursor: pointer;
+}
+
+.movieRow_listArea .movieRow_list .movieRow_item img:hover{
+    transform: scale(1)
+}
+
+.movieRow_arrowLeft, .movieRow_arrowRight{
+    position: absolute;
+    width: 4vw;
+    height: 18.5vw;
+    background-color:rgba(17, 17, 17, 0.608);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 1;
+    transition: all .3s;
+}
+
+.movieRow_arrowLeft{
+    left: 2vw;
+}
+
+.movieRow_arrowRight{
+    right: 0;
+}
+
+.movieRow:hover .movieRow_arrowLeft,
+.movieRow:hover .movieRow_arrowRight{
+    opacity: 1;
+}
+
+
+
+@media(max-width: 1200px) {
+    .movieRow_listArea .movieRow_list .movieRow_item{
+        max-width:22vw
+    }
+    .movieRow_arrowLeft, .movieRow_arrowRight{
+        height: 32vw;
+    }
+    
+}
+
+@media(max-width: 768px) {
+    .movieRow_listArea .movieRow_list .movieRow_item{
+        max-width:28vw
+    }
+
+    .movieRow_arrowLeft, .movieRow_arrowRight{
+        height: 40vw;
+    }
+    
+    .movieRow_arrowLeft, .movieRow_arrowRight{
+    opacity: 1;
+}
+}
+
+@media(max-width: 475px) {
+    .movieRow_listArea .movieRow_list .movieRow_item{
+        max-width: 40vw
+    }
+    .movieRow_arrowLeft, .movieRow_arrowRight{
+        height: 60vw;
+    }
+}
