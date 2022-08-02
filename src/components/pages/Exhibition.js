@@ -1,18 +1,23 @@
 import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 
-import{RequestMovie} from '../../request'
+import {RequestMovie} from '../../request'
+import {RequestMovieSimilar} from '../../request'
 
 import Loading from '../layout/Loading'
 import LinkButton from '../layout/LinkButton'
 import AddListButton from '../layout/AddListButton'
+import MovieRow from '../layout/MovieRow'
 import styles from './styles/Exhibition.module.css'
+import YouTube from 'react-youtube'
 
 export default function Exhibition() {
 
-  const  {id} = useParams()
   const [exhibitionData, setExhibitionData] = useState(null)
+  const [exhibitionSimilar, setExhibitionSimilar] = useState(null)
 
+  const  {id} = useParams()
+  console.log(id)
   if(exhibitionData){
     var date = exhibitionData.first_air_date ? new Date(exhibitionData.first_air_date).getFullYear()
       : new Date(exhibitionData.release_date).getFullYear()
@@ -38,11 +43,16 @@ export default function Exhibition() {
   }
 
   useEffect(() =>{
-    async function loadExhibition(type, id) {
-      const serie = await RequestMovie(type, id)  //'tv' id.replace('series', '')
-      setExhibitionData(serie)
-      console.log(serie)
+    window.scrollTo(0, 0)
 
+    async function loadExhibition(type, id) {
+      const similar = await RequestMovieSimilar(type, id)  //'tv' id.replace('series', '')
+      setExhibitionSimilar(similar)
+
+      const movie = await RequestMovie(type, id)  //'tv' id.replace('series', '')
+      setExhibitionData(movie)
+
+      console.log(similar)
       
     }
 
@@ -53,17 +63,18 @@ export default function Exhibition() {
       loadExhibition('movie', id.replace('movies', ''))
     }
 
-  }, [])
+  }, [id])
 
   return (
     <div className={styles.exhibition_container}> 
       {
-        exhibitionData ? (
+         exhibitionData ? (
           <>
+          {console.log(exhibitionData)}
           <div className={styles.exhibition_background} style={
             {background: `url(https://image.tmdb.org/t/p/original${exhibitionData.backdrop_path})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center center', } }>
+            
+  } }>
 
             <div className={styles.exhibition_shadow}>
 
@@ -97,10 +108,23 @@ export default function Exhibition() {
                 <AddListButton link='/' text='+ Adicionar a lista'/>
            </div>
 
-           <div className={styles.exhibition_trailer_container}>
-            {exhibitionData.videos.results.map((video, index) =>(
-              <iframe src='https://www.youtube.com/watch?v=PdEKecHDhG4'></iframe> //requisição não aceita
-            ))}
+           {exhibitionData.videos.results.length > 0 && (
+            <div className={styles.exhibition_trailer_container}>
+
+              <h1 className={styles.exhibition_trailer_title}>{exhibitionData.videos.results[exhibitionData.videos.results.length - 1].name ?
+              exhibitionData.videos.results[exhibitionData.videos.results.length - 1].name:
+              exhibitionData.videos.results[exhibitionData.videos.results.length - 1].name}</h1>
+
+              <YouTube
+              className={styles.exhibition_trailer}
+                videoId={exhibitionData.videos.results[exhibitionData.videos.results.length - 1].key}
+              />
+
+          </div>
+           )}
+
+           <div>
+            <MovieRow title='Similar' items={exhibitionSimilar}/>
            </div>
           </>
         ): (

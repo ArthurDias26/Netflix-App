@@ -82,3 +82,16 @@ export async function RequestMovie(type, id) {
     return await simpleFetch(`${type}/${id}?api_key=${API_key}&append_to_response=videos`)
     }
 }
+
+export async function RequestMovieSimilar(type, id) {
+    if (id && type) {
+    return await simpleFetch(`${type}/${id}/similar?api_key=${API_key}&append_to_response=videos`)
+    }
+}
+//https://api.themoviedb.org/3/search/multi?api_key=b36c2057f9e810360f8e3a13acc519d5&query=Jura
+
+export async function RequestMovieSearch(query) {
+    //return await simpleFetch(`search/multi?api_key=${API_key}%query=${query}`)
+    return 'neymar'
+    
+}

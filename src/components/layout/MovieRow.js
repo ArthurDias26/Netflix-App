@@ -55,7 +55,7 @@ export default function MovieRow({title, items}) {
         <div className={styles.movieRow_listArea}>
             <div className={styles.movieRow_list} style={{
                 marginLeft: scrollX + 'vw',
-                width: items.results.length * itemWidth + 'vw'
+                width: items.results.length * 40 + 'vw'
             }}>
                 {
                     items.results && items.results.map((item, index) => (

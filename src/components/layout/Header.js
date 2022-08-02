@@ -1,10 +1,18 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import {Link} from 'react-router-dom'
+
+import {FaSearch} from 'react-icons/fa'
 import styles from './styles/Header.module.css'
+import {RequestMovieSimilar} from '../../request'
 
 export default function Header() {
 
   const [blackHeader, setBlackHeader] = useState(false)
+
+  const [search, setSearch] = useState(null)
+  const [searchData, setSearchData] = useState(null)
+
+  const searchInputRef = useRef()
 
   useEffect(() => {
 
@@ -25,6 +33,20 @@ export default function Header() {
 
   }, [])
 
+  useEffect(() =>{
+    async function loadSearch() {
+      const requireSearch = await RequestMovieSimilar(search)
+      console.log(requireSearch)
+    }
+    loadSearch()
+  }, [search])
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    setSearch(searchInputRef.current.value)
+    console.log(search)
+  } 
+
   return (
     <header className={`${styles.header} ${blackHeader ? styles.blackHeader : ''}`}>
       <div className={styles.hader_logo}>
@@ -33,10 +55,10 @@ export default function Header() {
         </Link>
       </div>
 
-      <div className={styles.hader_account}>
-        <Link to='/accounts'>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png?20201013161117" alt="Netflix account"/>
-        </Link> 
+      <div className={styles.hader_search}>
+        <form onSubmit={handleSubmit}>
+        <input type='text' placeholder='Search in english...' ref={searchInputRef}/><FaSearch/>
+        </form>
       </div>
     </header>
   )
