@@ -13,18 +13,23 @@ export default function MovieBlock({movieData, title}){
 
                     <h1 className={styles.movieBlock_title}>{title}</h1>
 
-                    {movieData.map((movie, index) =>(
-                        <>
-                            {movie.poster_path && (
-                                <div className={styles.movie_item} key={index}>
-                                    <Link to={`/exhibition/${movie.name ? 'series' : 'movies'}${movie.id}`}>
-                                        <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={movie.name ? movie.name : movie.title}/>
-                                    </Link>
-                                </div>
-                            )}
-                        </>
-                        
-                    ))}
+                    <div className={styles.red_line}></div>
+
+                    <div className={styles.movie_items_container}>
+                        {movieData.map((movie, index) =>(
+                            <>
+                                {movie.poster_path && (
+                                    <div className={styles.movie_item} key={index}>
+                                        <Link to={`/exhibition/${movie.name ? 'series' : 'movies'}${movie.id}`}>
+                                            <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={movie.name ? movie.name : movie.title}/>
+                                        </Link>
+                                    </div>
+                                )}
+                            </>
+                            
+                        ))}
+                    </div>
+
                 </div> 
             ):
 
