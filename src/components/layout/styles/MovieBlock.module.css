@@ -1,0 +1,30 @@
+.movieBlock_container{
+    width: 80%;
+    margin-top: 2em;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movieBlock_title{
+    width: 100%;
+    padding: 90px 0 40px 30px;
+}
+
+.movie_item{
+    width: 25%;
+}
+
+.movie_item:hover img{
+    transform: scale(1);
+    display: inline-block;
+    overflow: hidden;
+
+}
+
+.movie_item img{
+    width: 100%;
+    transform: scale(0.9);
+    transition: all 0.25s;
+    cursor: pointer;
+}

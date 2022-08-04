@@ -7,6 +7,7 @@ import {RequestMovieSimilar} from '../../request'
 import Loading from '../layout/Loading'
 import LinkButton from '../layout/LinkButton'
 import AddListButton from '../layout/AddListButton'
+import MovieBlock from '../layout/MovieBlock'
 import MovieRow from '../layout/MovieRow'
 import styles from './styles/Exhibition.module.css'
 import YouTube from 'react-youtube'
@@ -43,7 +44,6 @@ export default function Exhibition() {
   }
 
   useEffect(() =>{
-    window.scrollTo(0, 0)
 
     async function loadExhibition(type, id) {
       const similar = await RequestMovieSimilar(type, id)  //'tv' id.replace('series', '')
@@ -62,6 +62,9 @@ export default function Exhibition() {
     }else  if(id.includes('movies')){
       loadExhibition('movie', id.replace('movies', ''))
     }
+    setTimeout(() => {
+      window.scrollTo(0, 0)
+    }, 300)
 
   }, [id])
 
@@ -124,7 +127,7 @@ export default function Exhibition() {
            )}
 
            <div>
-            <MovieRow title='Similar' items={exhibitionSimilar}/>
+            <MovieBlock title='Similar' movieData={exhibitionSimilar.results}/>
            </div>
           </>
         ): (

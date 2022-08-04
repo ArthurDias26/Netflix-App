@@ -1,18 +1,19 @@
 import React, {useState, useEffect, useRef} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 import {FaSearch} from 'react-icons/fa'
 import styles from './styles/Header.module.css'
-import {RequestMovieSimilar} from '../../request'
+import {RequestMovieSearch} from '../../request'
 
 export default function Header() {
 
   const [blackHeader, setBlackHeader] = useState(false)
 
   const [search, setSearch] = useState(null)
-  const [searchData, setSearchData] = useState(null)
 
-  const searchInputRef = useRef()
+  const [searchInput, setSearchInput] = useState()
+
+  const navigate = useNavigate()
 
   useEffect(() => {
 
@@ -35,16 +36,20 @@ export default function Header() {
 
   useEffect(() =>{
     async function loadSearch() {
-      const requireSearch = await RequestMovieSimilar(search)
-      console.log(requireSearch)
+      const requireSearch = await RequestMovieSearch(search)
+      if(requireSearch.results){
+        navigate('/search', {state: {searchData: {searchName: search, searchMovies: requireSearch}}})
+      }
     }
-    loadSearch()
+    if (search && search.length >= 1){
+      loadSearch()
+    }
+      setSearchInput('')
   }, [search])
 
   function handleSubmit(e) {
     e.preventDefault()
-    setSearch(searchInputRef.current.value)
-    console.log(search)
+    setSearch(searchInput)
   } 
 
   return (
@@ -57,7 +62,7 @@ export default function Header() {
 
       <div className={styles.hader_search}>
         <form onSubmit={handleSubmit}>
-        <input type='text' placeholder='Search in english...' ref={searchInputRef}/><FaSearch/>
+        <input type='text' placeholder='Search in english...' value={searchInput} onChange={(e) => {setSearchInput(e.target.value)}}/><button type='submit'><FaSearch/></button>
         </form>
       </div>
     </header>

@@ -91,7 +91,5 @@ export async function RequestMovieSimilar(type, id) {
 //https://api.themoviedb.org/3/search/multi?api_key=b36c2057f9e810360f8e3a13acc519d5&query=Jura
 
 export async function RequestMovieSearch(query) {
-    //return await simpleFetch(`search/multi?api_key=${API_key}%query=${query}`)
-    return 'neymar'
-    
+     return await simpleFetch(`search/multi?api_key=${API_key}&query=${query}`)
 }
