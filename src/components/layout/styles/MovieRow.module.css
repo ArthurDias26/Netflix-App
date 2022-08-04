@@ -64,16 +64,24 @@
     opacity: 1;
 }
 
-
+@media(max-width: 1920px) {
+    .movieRow h2{
+        font-size: 2em;
+    }
+}
 
 @media(max-width: 1200px) {
     .movieRow_listArea .movieRow_list .movieRow_item{
         max-width:22vw
     }
+
     .movieRow_arrowLeft, .movieRow_arrowRight{
         height: 32vw;
     }
-    
+
+    .movieRow h2{
+        font-size: 1.6em;
+    }
 }
 
 @media(max-width: 768px) {
@@ -86,8 +94,12 @@
     }
     
     .movieRow_arrowLeft, .movieRow_arrowRight{
-    opacity: 1;
-}
+        opacity: 1;
+    }
+
+    .movieRow h2{
+        font-size: 1.5em;
+    }
 }
 
 @media(max-width: 475px) {
@@ -96,5 +108,9 @@
     }
     .movieRow_arrowLeft, .movieRow_arrowRight{
         height: 60vw;
+    }
+
+    .movieRow h2{
+        font-size: 1.3em;
     }
 }

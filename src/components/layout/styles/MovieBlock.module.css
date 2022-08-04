@@ -40,3 +40,35 @@
     transition: all 0.25s;
     cursor: pointer;
 }
+
+@media (max-width: 1920px) {
+    .movieBlock_title{
+        font-size: 2.8em;
+    }
+}
+
+@media (max-width: 1200px) {
+    .movieBlock_title{
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .movie_item{
+        width: 33.33%;
+    }
+
+    .movieBlock_title{
+        font-size: 1.7em;
+    }
+
+    .movieBlock_container{
+        width: 90%;
+    }
+}
+
+@media (max-width: 460px) {
+    .movieBlock_title{
+        font-size: 1.3em;
+    }
+}

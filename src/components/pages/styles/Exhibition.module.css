@@ -69,7 +69,7 @@
     background-color: #111;
     border: 1px solid white;
     border-radius: 14px;
-    margin-left: 1em;
+    margin: 0 1em 10px 0;
  }
 
  .exhibition_buttons{
@@ -82,7 +82,7 @@
  }
 
  .exhibition_trailer_title{
-    font-size: 2em;
+    font-size: 2.8em;
     text-align: center;
  }
 
@@ -101,4 +101,94 @@
     transform: translate(-50%, -50%);
     width: 80%;
     height: 80%;
+ }
+
+ @media(max-width: 1080px) {
+    .exhibition_title{
+        font-size: 3.5em;
+    }
+    
+    .exhibition_tagline{
+        font-size: 1.8em;
+    }
+    
+    .exhibition_decripion{
+        font-size: 18px;
+        width: 65%;
+    }
+    
+    .exhibition_info{
+        font-size: 18px;
+    }
+
+    .exhibition_geners span{
+        padding: 4px 8px;
+        margin-left: 1em;
+        font-size: 17px;
+     }
+
+     .exhibition_trailer_title{
+        font-size: 2.4em;
+     }
+ }
+
+ @media(max-width: 768px) {
+    .exhibition_title{
+        font-size: 2.7em;
+    }
+    
+    .exhibition_tagline{
+        font-size: 1.6em;
+    }
+    
+    .exhibition_decripion{
+        font-size: 16px;
+        width: 70%;
+    }
+    
+    .exhibition_info{
+        font-size: 18px;
+    }
+
+    .exhibition_geners span{
+        margin: 0 0.7em 10px 0;
+        font-size: 16px;
+     }
+
+     .exhibition_trailer_title{
+        font-size: 2em;
+     }
+ }
+
+ @media(max-width: 460px) {
+    .exhibition_title{
+        font-size: 2.2em;
+    }
+    
+    .exhibition_tagline{
+        font-size: 1.4em;
+    }
+    
+    .exhibition_decripion{
+        font-size: 15px;
+        width: 100%;
+    }
+    
+    .exhibition_info{
+        font-size: 18px;
+    }
+
+    .exhibition_geners span{
+        margin: 0 0.7em 10px 0;
+        font-size: 15px;
+     }
+
+     .exhibition_trailer_title{
+        font-size: 1.6em;
+     }
+
+     .exhibition_trailer iframe{
+        width: 100%;
+        height: 100%;
+     }
  }
