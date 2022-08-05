@@ -1,4 +1,4 @@
-.Footer{
+.footer{
     background:  url(../../../midia/netflixbackground.jpg);
     background-size: cover;
     background-position: center center;
@@ -14,52 +14,65 @@
     padding: 35px 0;
 }
 
-.Footer p{
-    padding-bottom: 15px;
-}
-
-.Footer ul{
+.footer .lists_container{
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.footer ul{
     list-style: none;
+    margin-right: 80px;
 }
 
-.Footer ul li{
-    margin-right: 20px;
+.footer ul li{
+    margin-bottom: 20px;
     cursor: pointer;
-    transition: all .3s;
 }
 
-.Footer ul li a{
+.footer ul li a{
     color: #fff;
     text-decoration: none;
+    transition: all .3s;
+
 }
 
-.Footer ul li:hover{
-    opacity: 0.7;
-}
-
-.Footer ul li:last-child{
-    margin-right: 0px;
+.footer ul li a:hover{
+    color: #e50914;
 }
 
 @media (max-width: 1200px) {
-    .Footer{
+    .footer{
         font-size: 20px;
-        margin-top: 60px;
     }
 }
 
 @media (max-width: 768px) {
-    .Footer{
+    .footer{
         font-size: 18px;
-        margin-top: 60px;
+    }
+
+    .footer ul{
+        margin-right: 50px;
     }
 }
 
 @media (max-width: 580px) {
-    .Footer{
+    .footer{
         font-size: 16px;
-        margin-top: 60px;
+    }
+
+    .footer ul{
+        margin-right: 30px;
+    }
+}
+
+@media (max-width: 460px) {
+    .footer{
+        font-size: 14px;
+    }
+
+    .footer ul{
+        margin-right: 25px;
     }
 }

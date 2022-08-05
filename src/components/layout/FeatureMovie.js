@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './styles/FeatureMovie.module.css'
 import LinkButton from './LinkButton'
-import AddListButton from './AddListButton'
+import {FaPlay, FaInfoCircle} from 'react-icons/fa'
 
 export default function FeatureMovie({movieData}) {
 
@@ -32,8 +32,12 @@ export default function FeatureMovie({movieData}) {
 
             <div className={styles.featured_buttons}>
 
-                <LinkButton link={`exhibition/series${movieData.id}`} text='Assistir'/>
-                <AddListButton link='/' text='+ Adicionar a lista'/>
+                <LinkButton link={`exhibition/series${movieData.id}`} icon={<FaPlay/>} text='Play'/>
+                <LinkButton link={`exhibition/series${movieData.id}`} customStyle={{
+                  backgroundColor: '#BB1D24',
+                  color: 'white'
+                }} icon={<FaInfoCircle/>} text='More Info'/>
+
             </div>
 
             <div className={styles.featured_geners}>Gêneros: {movieGeners.join(", ")}</div>

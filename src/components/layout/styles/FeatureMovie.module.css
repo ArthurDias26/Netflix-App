@@ -7,12 +7,12 @@
 
 .featured_shadowX{
     height: inherit;
-    background: linear-gradient(to top, #141414 10%, transparent 90%);
+    background: linear-gradient(to right, #141414 10%, transparent 90%);
 }
 
 .featured_shadowY{
     height: inherit;
-    background: linear-gradient(to right, #141414 15%, transparent 90%);
+    background: linear-gradient(to top, #141414 8%, transparent 90%);
     display: flex;
     flex-direction: column;
     justify-content: center;

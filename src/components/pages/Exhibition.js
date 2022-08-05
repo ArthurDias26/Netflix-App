@@ -3,12 +3,11 @@ import {useParams} from 'react-router-dom'
 
 import {RequestMovie} from '../../request'
 import {RequestMovieSimilar} from '../../request'
+import {FaPlay} from 'react-icons/fa'
 
 import Loading from '../layout/Loading'
 import LinkButton from '../layout/LinkButton'
-import AddListButton from '../layout/AddListButton'
 import MovieBlock from '../layout/MovieBlock'
-import MovieRow from '../layout/MovieRow'
 import styles from './styles/Exhibition.module.css'
 import YouTube from 'react-youtube'
 
@@ -107,8 +106,12 @@ export default function Exhibition() {
           </div>
 
             <div className={styles.exhibition_buttons}>
-               <LinkButton link='./' text='Assistir'/>
-                <AddListButton link='/' text='+ Adicionar a lista'/>
+
+               <LinkButton link='./' icon={<FaPlay/>} text='Play'/>
+               <LinkButton link='./' customStyle={{
+                  backgroundColor: '#BB1D24',
+                  color: 'white'
+                }} icon='+' text=' Add to list'/>
            </div>
 
            {exhibitionData.videos.results.length > 0 && (

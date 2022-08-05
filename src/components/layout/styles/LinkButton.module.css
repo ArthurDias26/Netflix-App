@@ -18,6 +18,16 @@
     font-size: 22px;
 }
 
+.LinkButton span{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.LinkButton span svg{
+    margin-right: 10px;
+}
+
 @media (max-width: 460px) {
     .LinkButton{
     padding: 8px 16px;
