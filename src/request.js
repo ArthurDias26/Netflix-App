@@ -4,6 +4,7 @@ const API_url = 'https://api.themoviedb.org/3'
 
 const simpleFetch = async (endpoint) => { 
     const req = await fetch(`${API_url}/${endpoint}`)
+    .catch((error) => {console.log(error)})
     const res = await req.json()
     return res
 }
