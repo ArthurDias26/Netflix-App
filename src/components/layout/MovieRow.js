@@ -19,7 +19,7 @@ export default function MovieRow({title, items}) {
         }else if (window.innerWidth < 1200){
             setItemWidth(22)
         } 
-    }, [])
+    }, [window.innerWidth])
 
  
 

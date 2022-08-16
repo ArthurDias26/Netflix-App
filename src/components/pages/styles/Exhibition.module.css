@@ -199,4 +199,9 @@
         width: 100%;
         height: 100%;
      }
+
+     .exhibition_trailer{
+        width: 100vw;
+        height: 65vw;
+    }
  }
