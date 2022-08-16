@@ -1,7 +1,3 @@
-.exhibition_container{
-    
-}
-
 .exhibition_background{
     width: 98.9vw;
     height: 80vh;
@@ -159,7 +155,7 @@
     }
 
     .exhibition_geners span{
-        margin: 0 0.7em 10px 0;
+        margin: 0 0.7em 0 10px;
         font-size: 16px;
      }
 
@@ -187,7 +183,6 @@
     }
 
     .exhibition_geners span{
-        margin: 0 0.7em 10px 0;
         font-size: 15px;
      }
 
