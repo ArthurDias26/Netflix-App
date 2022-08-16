@@ -64,7 +64,7 @@
 }
 
 .movieRow_arrowRight{
-    right: 0;
+    right: 2vw;
 }
 
 .movieRow:hover .movieRow_arrowLeft,
