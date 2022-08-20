@@ -3,23 +3,26 @@ const API_key = 'b36c2057f9e810360f8e3a13acc519d5'
 const API_url = 'https://api.themoviedb.org/3'
 
 const simpleFetch = async (endpoint) => { 
-    const req = await fetch(`${API_url}/${endpoint}`,
-    {method: 'GET',
-     headers: {'Content-Type': 'application/', 'Retry-After': 3}}).catch(err => {simpleFetch(endpoint)})
+    const req = await fetch(`${API_url}/${endpoint}`).catch(fetchRetry(`${API_url}/${endpoint}`, 300, 1))
     const res = await req.json()
     return res
 }
 
-/**
-    Netflix Originals
-    Treanding (Recomendado)
-    Top Tread (em alta)
-    Action
-    Comedy
-    Horror
-    Romance
-    Documentary
-**/
+function wait(delay){
+    return new Promise((resolve) => setTimeout(resolve, delay));
+}
+
+function fetchRetry(url, delay, tries) {
+    function onError(err){
+        var triesLeft = tries - 1;
+        if(!triesLeft){
+            throw err;
+        }
+        return wait(delay).then(() => fetchRetry(url, delay));
+    }
+    return fetch(url).catch(onError);
+}
+
 
 export default {
     
