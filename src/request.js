@@ -26,7 +26,7 @@ export default {
             {
                 slug: 'originals',
                 title: 'Netflix Originals',
-                items: await simpleFetch(`discover/tv/?with_network=123&api_key=${API_key}`)
+                items: await simpleFetch(`discover/tv?with_network=123&api_key=${API_key}`)
             },
             
             {

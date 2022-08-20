@@ -6,7 +6,6 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Header from './components/layout/Header'
 import Home from './components/pages/Home'
 import Search from './components/pages/Search'
-import Accounts from './components/pages/Accounts'
 import Exhibition from './components/pages/Exhibition'
 import Footer from './components/layout/Footer'
 import Loading from './components/layout/Loading'
@@ -36,7 +35,6 @@ function App() {
 
             <Route path="/" element={<Home movieData={movieList}/>}/>
             <Route path="/search" element={<Search/>}/>
-            <Route path="/accounts" element={<Accounts/>}/>
 
             <Route path="/exhibition/:id" element={<Exhibition/>}/>
             

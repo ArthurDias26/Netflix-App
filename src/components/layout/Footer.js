@@ -5,16 +5,27 @@ import {FaLinkedin, FaGithub, FaPortrait} from 'react-icons/fa'
 
 export default function Footer() {
   return (
-    <footer className={styles.Footer}>
+    <footer className={styles.footer}>
       <div className={styles.shadow}>
-        <p>Projeto didatico feito com react, por Arthur Dias.</p>
-        <p>Dados retirados do banco de dados do TMDB.</p>
-        <p>Contanto:</p>
-        <ul>
-          <li><a href=""><FaLinkedin/> Linkedin</a></li>
-          <li><a href=""><FaGithub/> Github</a></li>
-          <li><a href=""><FaPortrait/> Meu portifólio</a></li>
-        </ul>
+        <div className={styles.lists_container}>
+          <ul>
+            <li><a href="">FAQ  </a></li>
+            <li><a href="">Investor Relations</a></li>
+            <li><a href="">Ways to Watch</a></li>
+          </ul>
+
+          <ul>
+            <li><a href="">Help Center</a></li>
+            <li><a href="">Jobs</a></li>
+            <li><a href="">Terms of Use</a></li>
+          </ul>
+
+          <ul>
+            <li><a href="">Contact Us</a></li>
+            <li><a href="">Account</a></li>
+            <li><a href="">Privacy</a></li>
+          </ul>
+        </div>
       </div>
     </footer>
   )
