@@ -8,7 +8,6 @@ import Loading from '../layout/Loading'
 import LinkButton from '../layout/LinkButton'
 import AddListButton from '../layout/AddListButton'
 import MovieBlock from '../layout/MovieBlock'
-import MovieRow from '../layout/MovieRow'
 import styles from './styles/Exhibition.module.css'
 import YouTube from 'react-youtube'
 
