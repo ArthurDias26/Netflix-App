@@ -3,7 +3,9 @@ const API_key = 'b36c2057f9e810360f8e3a13acc519d5'
 const API_url = 'https://api.themoviedb.org/3'
 
 const simpleFetch = async (endpoint) => { 
-    const req = await fetch(`${API_url}/${endpoint}`).catch(err => {simpleFetch(endpoint)})
+    const req = await fetch(`${API_url}/${endpoint}`,
+    {method: 'GET',
+     headers: {'Content-Type': 'application/', 'Retry-After': 3}}).catch(err => {simpleFetch(endpoint)})
     const res = await req.json()
     return res
 }
