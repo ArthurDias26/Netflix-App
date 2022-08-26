@@ -14,8 +14,8 @@ export default function Search() {
     if (location.state){
       setSearchTitle(location.state.searchData.searchName)
       setSearchData(location.state.searchData.searchMovies)
-  
     }
+    window.scrollTo(0, 0)
   }, [location.state])
   
   

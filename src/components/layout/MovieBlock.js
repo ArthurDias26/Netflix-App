@@ -5,8 +5,6 @@ import Loading from "./Loading"
 
 export default function MovieBlock({movieData, title}){
 
-    console.log(movieData)
-
     return(
         <>
             {movieData && (

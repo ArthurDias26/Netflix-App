@@ -19,10 +19,15 @@ export default function Home({movieData}) {
         let randomNumber = Math.floor(Math.random() * originals[0].items.results.length - 1)
         let chosen = originals[0].items.results[randomNumber]
         let chosenInfo = await RequestMovie('tv', chosen.id)
-        setFeatureData(chosenInfo)
+        if (chosenInfo.overview){
+          setFeatureData(chosenInfo)
+        } else{
+          changeFeatureData()
+        }
       }
     }
     changeFeatureData()
+    window.scrollTo(0, 0)
   }, [movieData])
 
 

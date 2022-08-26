@@ -17,7 +17,6 @@ export default function Exhibition() {
   const [exhibitionSimilar, setExhibitionSimilar] = useState(null)
 
   const  {id} = useParams()
-  console.log(id)
   if(exhibitionData){
     var date = exhibitionData.first_air_date ? new Date(exhibitionData.first_air_date).getFullYear()
       : new Date(exhibitionData.release_date).getFullYear()
@@ -42,6 +41,8 @@ export default function Exhibition() {
 
   }
 
+  console.log(exhibitionData)
+
   useEffect(() =>{
 
     async function loadExhibition(type, id) {
@@ -50,8 +51,6 @@ export default function Exhibition() {
 
       const movie = await RequestMovie(type, id)  //'tv' id.replace('series', '')
       setExhibitionData(movie)
-
-      console.log(similar)
       
     }
 
@@ -63,7 +62,7 @@ export default function Exhibition() {
     }
     setTimeout(() => {
       window.scrollTo(0, 0)
-    }, 300)
+    }, 250)
 
   }, [id])
 
@@ -72,7 +71,6 @@ export default function Exhibition() {
       {
          exhibitionData ? (
           <>
-          {console.log(exhibitionData)}
           <div className={styles.exhibition_background} style={
             {background: `url(https://image.tmdb.org/t/p/original${exhibitionData.backdrop_path})`,
             

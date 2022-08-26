@@ -48,14 +48,19 @@
 
 }
 
+.movieRow_arrowLeft svg:hover, .movieRow_arrowRight svg:hover{
+    background-color: #bb1d24;
+    padding: 15px;
+}
+
 .movieRow_arrowLeft svg, .movieRow_arrowRight svg{
     height: max-content;
     width: max-content;
     padding: 10px;
-    padding: 10px 10px;
     border-radius: 50%;
     background-color: black;
     cursor: pointer;
+    transition: all .35s;
 
 }
 
@@ -104,6 +109,10 @@
     
     }
 
+    .movieRow_arrowLeft svg:hover, .movieRow_arrowRight svg:hover{
+        padding: 10px;
+    }
+
     .movieRow h2{
         font-size: 1.5em;
     }
@@ -119,6 +128,8 @@
     }
     .movieRow_arrowLeft svg, .movieRow_arrowRight svg{
         padding: 4px;
-    
+    }
+    .movieRow_arrowLeft svg:hover, .movieRow_arrowRight svg:hover{
+        padding: 8px;
     }
 }

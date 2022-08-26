@@ -1,28 +1,12 @@
-
 const API_key = 'b36c2057f9e810360f8e3a13acc519d5'
 const API_url = 'https://api.themoviedb.org/3'
 
 const simpleFetch = async (endpoint) => { 
-    const req = await fetch(`${API_url}/${endpoint}`).catch(fetchRetry(`${API_url}/${endpoint}`, 100, 300))
+    const time = await new Promise((resolve) => setTimeout(resolve, 50))
+    const req = await fetch(`${API_url}/${endpoint}`)
     const res = await req.json()
     return res
 }
-
-function wait(delay){
-    return new Promise((resolve) => setTimeout(resolve, delay));
-}
-
-function fetchRetry(url, delay, tries) {
-    function onError(err){
-        var triesLeft = tries - 1;
-        if(!triesLeft){
-            throw err;
-        }
-        return wait(delay).then(() => fetchRetry(url, delay));
-    }
-    return fetch(url).catch(onError);
-}
-
 
 export default {
     
@@ -49,7 +33,7 @@ export default {
             {
                 slug: 'action',
                 title: 'Top Treanding TV',
-                items: await simpleFetch(`trending/tv/week?api_key=${API_key}`) // trending/movie/week?api_key=
+                items: await simpleFetch(`trending/tv/week?api_key=${API_key}`) 
             },
     
             {
@@ -93,7 +77,6 @@ export async function RequestMovieSimilar(type, id) {
     return await simpleFetch(`${type}/${id}/similar?api_key=${API_key}&append_to_response=videos`)
     }
 }
-//https://api.themoviedb.org/3/search/multi?api_key=b36c2057f9e810360f8e3a13acc519d5&query=Jura
 
 export async function RequestMovieSearch(query) {
      return await simpleFetch(`search/multi?api_key=${API_key}&query=${query}`)

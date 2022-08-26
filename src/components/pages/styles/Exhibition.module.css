@@ -1,6 +1,7 @@
 .exhibition_background{
     width: 98.9vw;
     height: 80vh;
+    min-height: 600px;
     background-position: center center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
@@ -137,6 +138,11 @@
  }
 
  @media(max-width: 768px) {
+
+    .exhibition_background{
+    min-height: 450px;
+    }
+
     .exhibition_title{
         font-size: 2.7em;
     }
@@ -155,7 +161,7 @@
     }
 
     .exhibition_geners span{
-        margin: 0 0.7em 0 10px;
+        margin: 0 0 8px 10px;
         font-size: 16px;
      }
 

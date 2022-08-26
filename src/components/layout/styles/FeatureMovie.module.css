@@ -1,5 +1,6 @@
 .featured{
     height: 100vh;
+    min-height: 600px;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -11,16 +12,18 @@
 }
 
 .featured_shadowY{
+    min-height: 600px;
     height: inherit;
     background: linear-gradient(to top, #141414 8%, transparent 90%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+ 
 }
 
 .featured_info_container{
-    margin-top: -15%;
-    margin-left: 2%;
+    height: 100%;
+    display: flex;
+    margin-top: -1%;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .featured_name{
@@ -92,10 +95,6 @@
 
 @media(max-width: 768px) {
 
-    .featured_info_container{
-        margin-top: -25%;
-    }
-
     .featured_name{
         font-size: 3.5em;
     }
@@ -117,8 +116,13 @@
 
 @media(max-width: 460px) {
 
-    .featured_info_container{
-        margin-top: -35%;
+    .featured{
+        min-height: 480px;
+    }
+    
+    .featured_shadowY{
+        min-height: 480px;
+     
     }
 
     .featured_name{
