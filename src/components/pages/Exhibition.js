@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 
-import {RequestMovie} from '../../request'
-import {RequestMovieSimilar} from '../../request'
+import {RequestMovie} from '../../api/request'
+import {RequestMovieSimilar} from '../../api/request'
 import {FaPlay} from 'react-icons/fa'
 
 import Loading from '../layout/Loading'

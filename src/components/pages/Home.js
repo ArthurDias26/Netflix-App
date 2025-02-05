@@ -5,7 +5,7 @@ import FeatureMovie from '../layout/FeatureMovie'
 
 import styles from './styles/Home.module.css'
 
-import {RequestMovie} from '../../request'
+import {RequestMovie} from '../../api/request'
 
 export default function Home({movieData}) {
 

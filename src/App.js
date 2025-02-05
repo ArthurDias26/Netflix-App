@@ -10,7 +10,7 @@ import Exhibition from './components/pages/Exhibition'
 import Footer from './components/layout/Footer'
 import Loading from './components/layout/Loading'
 
-import TMDB from './request'
+import TMDB from './api/request'
 
 function App() {
 

@@ -3,7 +3,7 @@ import {Link, useNavigate} from 'react-router-dom'
 
 import {FaSearch} from 'react-icons/fa'
 import styles from './styles/Header.module.css'
-import {RequestMovieSearch} from '../../request'
+import {RequestMovieSearch} from '../../api/request'
 
 export default function Header() {
 
